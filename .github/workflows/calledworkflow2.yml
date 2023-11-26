@@ -6,3 +6,8 @@ jobs:
     steps:
       - name: running report
         run: echo 'generating report'
+  report3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: publishing report
+        run: echo 'publishing report'
