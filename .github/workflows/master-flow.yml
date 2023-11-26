@@ -83,6 +83,7 @@ jobs:
   report:
     needs: [deploy, lint]
     if: failure()
+    uses: ./.github/workflows/calledworkflow2.yml
     runs-on: ubuntu-latest
     steps:
       - name: report work flow

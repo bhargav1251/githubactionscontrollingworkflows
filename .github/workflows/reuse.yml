@@ -6,4 +6,8 @@ jobs:
     steps:
       - name: does nothing
         run: echo 'do nothing'
-
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: running report
+        run: echo 'generating report'
