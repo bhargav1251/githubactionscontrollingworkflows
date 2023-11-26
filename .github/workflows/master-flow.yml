@@ -71,6 +71,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
       - name: Get build artifacts
         uses: actions/download-artifact@v3
         with:

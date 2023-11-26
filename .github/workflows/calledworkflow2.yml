@@ -4,8 +4,6 @@ jobs:
   report2:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
       - name: running report
         run: echo 'generating report'
   report3:
