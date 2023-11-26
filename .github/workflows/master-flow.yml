@@ -79,8 +79,9 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Deploying..."
+      - name: post-deploy
+        uses: ./.github/workflows/calledworkflow2.yml
 
   report:
     needs: [deploy, lint]
-    if: failure()
     uses: ./.github/workflows/calledworkflow2.yml
