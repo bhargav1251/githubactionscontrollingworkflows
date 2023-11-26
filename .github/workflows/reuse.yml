@@ -1,0 +1,9 @@
+name: reuse-workflow
+on: workflow_call
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: does nothing
+        run: echo 'do nothing'
+
