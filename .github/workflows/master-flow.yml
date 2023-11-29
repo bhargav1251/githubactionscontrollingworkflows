@@ -70,12 +70,11 @@ jobs:
           path: dist
   deploy:
     needs: build
-    environment: testing
     uses: ./.github/workflows/reuse.yml
     with:
       artifact-name: dist-files
     secrets:
-     S0ME_SECRET: ${{secrets.SOME_SECRET}}
+     S0ME_SECRET: ${{secrets.SOME_REMOTE_SECRET}}
 
   report:
     needs: [deploy, lint]
