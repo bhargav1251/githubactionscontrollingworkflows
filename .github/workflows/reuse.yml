@@ -26,6 +26,7 @@ jobs:
       - name: Depploy
         run: echo 'deploying......'
   report:
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
       - name: running report
