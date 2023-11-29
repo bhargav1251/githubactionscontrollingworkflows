@@ -7,7 +7,7 @@ on:
         required: true
         type: string
     secrets:
-      S0ME_REPO_SECRET:
+      S0ME_SECRET:
         required: true
 jobs:
   deploy:
@@ -22,7 +22,7 @@ jobs:
       - name: output contents
         run: ls
       - name: printing secret
-        run: echo " MY SEECRET IS ${{secrets.SOME_REPO_SECRET}}"
+        run: echo " MY SEECRET IS ${{secrets.SOME_SECRET}}"
       - name: Depploy
         run: echo 'deploying......'
   report:

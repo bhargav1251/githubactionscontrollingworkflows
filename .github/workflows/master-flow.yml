@@ -75,7 +75,7 @@ jobs:
     with:
       artifact-name: dist-files
     secrets:
-     S0ME_REPO_SECRET: ${{secrets.SOME_REPO_SECRET}}
+     S0ME_SECRET: ${{secrets.SOME_REPO_SECRET}}
 
   report:
     needs: [deploy, lint]
