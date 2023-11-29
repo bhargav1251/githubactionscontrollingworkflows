@@ -73,14 +73,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - name: Get build artifacts
-        uses: actions/download-artifact@v3
+      - name: download and deploy
+        uses: ./.github/workflows/reuse.yml
         with:
-          name: dist-files
-      - name: Output contents
-        run: ls
-      - name: Deploy
-        run: echo "Deploying..."
+          artifact-name: dist-files
 
   report:
     needs: [deploy, lint]

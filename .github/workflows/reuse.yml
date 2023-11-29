@@ -1,11 +1,23 @@
 name: reuse-workflow
-on: workflow_call
+on:
+  workflow_call:
+    inputs:
+      artifact-name:
+        description: The artifact name
+        required: true
+        type: string
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: does nothing
-        run: echo 'do nothing'
+      - name: Get Artifacts
+        uses: actions/download-artifacts@v3
+        with:
+          name: {{ inputs.artifact-name }}
+      - name: output contents
+        run: ls
+      - name: Depploy
+        run: echo 'deploying......'
   report:
     runs-on: ubuntu-latest
     steps:
