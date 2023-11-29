@@ -22,7 +22,7 @@ jobs:
       - name: output contents
         run: ls
       - name: printing secret
-        run: echo "${{secrets.SOME_SECRET}}"
+        run: echo " MY SEECRET IS ${{secrets.SOME_REPO_SECRET}}"
       - name: Depploy
         run: echo 'deploying......'
   report:
