@@ -71,8 +71,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
       - name: download and deploy
         uses: ./.github/workflows/reuse.yml
         with:
