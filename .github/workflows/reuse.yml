@@ -7,7 +7,7 @@ on:
         required: true
         type: string
     secrets:
-      some-secret:
+      SOME_SECRET:
         required: true
 jobs:
   deploy:
@@ -21,6 +21,8 @@ jobs:
           name: ${{ inputs.artifact-name }}
       - name: output contents
         run: ls
+      - name: printing secret
+        run: echo "${{secrets.SOME_SECRET}}"
       - name: Depploy
         run: echo 'deploying......'
   report:
