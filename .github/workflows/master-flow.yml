@@ -79,4 +79,7 @@ jobs:
 
   report:
     needs: [deploy, lint]
-    uses: ./.github/workflows/calledworkflow2.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: print job status
+        run: echo "job status is ${{ needs.deploy.outputs.job-status}}"

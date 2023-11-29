@@ -9,9 +9,16 @@ on:
     secrets:
       S0ME_SECRET:
         required: true
+    outputs:
+      job-status:
+        description: responds with a job status
+        value: ${{jobs.deploy.outputs.jobstatus}}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    outputs:
+      jobstatus: ${{ steps.result1.outputs.jobstatus}}
     steps:
       - name: Get Code
         uses: actions/checkout@v4
@@ -25,6 +32,9 @@ jobs:
         run: echo " MY SEECRET IS ${{secrets.SOME_SECRET}}"
       - name: Depploy
         run: echo 'deploying......'
+      - name: set result output
+        id: result1
+        run: echo "jobstatus=success" >> $GITHUB_OUTPUT
   report:
     needs: deploy
     runs-on: ubuntu-latest
