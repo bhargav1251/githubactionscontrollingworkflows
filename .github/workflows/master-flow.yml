@@ -69,12 +69,9 @@ jobs:
           path: dist
   deploy:
     needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: download and deploy
-        uses: ./.github/workflows/reuse.yml
-        with:
-          artifact-name: dist-files
+    uses: ./.github/workflows/reuse.yml
+    with:
+      artifact-name: dist-files
 
   report:
     needs: [deploy, lint]
