@@ -13,7 +13,7 @@ jobs:
       - name: Get Artifacts
         uses: actions/download-artifacts@v3
         with:
-          name: {{ inputs.artifact-name }}
+          name: ${{ inputs.artifact-name }}
       - name: output contents
         run: ls
       - name: Depploy
